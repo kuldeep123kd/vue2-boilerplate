@@ -5,7 +5,7 @@ const routerOptions = [
   {
     path: '/',
     name: 'Home',
-    componentPath: 'HelloWorld'
+    componentPath: 'Home'
   },
   {
     path: '/about',
@@ -14,7 +14,7 @@ const routerOptions = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-    componentPath: 'views/About'
+    componentPath: 'About'
   }
 ];
 
