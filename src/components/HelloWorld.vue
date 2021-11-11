@@ -29,6 +29,9 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <h1 style="color: red;">{{ counter }}</h1>
+    <button @click="addOne">Add 1</button>
+    <button @click="addTen">Add 10</button>
   </div>
 </template>
 
@@ -37,7 +40,23 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  }
+  },
+  computed: {
+    counter() {
+      // return this.$store.getters.getCounter;
+      return this.$store.getters.normalizedCounter;
+    },
+  },
+  methods: {
+    addOne() {
+      this.$store.commit('increase', 1);
+    },
+    addTen() {
+      this.$store.commit('increment', {
+        value: 10
+      });
+    },
+  },
 }
 </script>
 
